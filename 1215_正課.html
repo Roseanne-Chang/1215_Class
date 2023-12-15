@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Guessing Game</title>
+</head>
+<body>
+
+<script>
+  // Generate a random number between 1 and 10
+  var rand = Math.floor((Math.random() * 10) + 1);
+
+  // Flag to control the game loop
+  var guessedCorrectly = false;
+
+  // Game loop
+  while (!guessedCorrectly) {
+    // Prompt the user to guess a number
+    var userGuess = parseInt(window.prompt("Guess a number between 1 and 10:"));
+
+    // Check if the guess is correct
+    if (userGuess === rand) {
+      alert("Congratulations! You guessed the correct number.");
+      guessedCorrectly = true;
+    } else {
+      alert("Incorrect guess. Try again!");
+    }
+  }
+</script>
+
+</body>
+</html>
