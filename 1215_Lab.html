@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Buttons</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background-color 0.3s, transform 0.3s; /* Added transform property */
+}
+
+.button:hover {
+  background-color: lightgray;
+  transform: scale(1.1); /* Enlarge the button on hover */
+}
+
+#redButton {
+  background-color: red;
+  color: white;
+}
+
+#blueButton1,
+#blueButton2 {
+  background-color: blue;
+  color: white;
+}
+
+#greenButton {
+  background-color: green;
+  color: white;
+}
+#ResetButton{
+    background-color: gray;
+    color: white;
+}
+
+  </style>
+</head>
+
+<body>
+  <h1>Interactive Buttons</h1>
+  <div id="buttonContainer">
+    <button id="redButton" class="button" onclick=alert(firstInput)>1st button</button>
+    <button id="blueButton1" class="button" onclick=alert(secondInput)>2nd button</button>
+    <button id="blueButton2" class="button" onclick="changeColor('blue')">blue</button>
+    <button id="greenButton" class="button" onclick="changeColor('green')">green</button>
+    <button id="ResetButton" class="button" onclick="changeColor('white'); alert('Reset Background Color')">Reset BG Color</button>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      document.body.style.backgroundColor = color;
+    }
+    var firstInput= window.prompt("Enter first number");
+    var secondInput= window.prompt("Enter second number");
+    if (firstInput > secondInput) {
+        document.body.style.backgroundColor = 'lightblue';
+        document.writeln(firstInput + " > " + secondInput);
+      } else if (secondInput > firstInput) {
+        document.body.style.backgroundColor = 'orange';
+        document.writeln(secondInput + " > " + firstInput);
+      } else {
+        document.body.style.backgroundColor = 'lightyellow';
+        document.writeln(secondInput + " == " + firstInput);
+      }
+    
+
+  </script>
+</body>
+
+</html>
